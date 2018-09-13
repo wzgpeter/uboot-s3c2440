@@ -41,6 +41,7 @@ obj-$(CONFIG_MCFUART) += mcfuart.o
 obj-$(CONFIG_SYS_NS16550) += ns16550.o
 obj-$(CONFIG_S5P) += serial_s5p.o
 obj-$(CONFIG_MXC_UART) += serial_mxc.o
+obj-$(CONFIG_S3C24X0_SERIAL) += serial_s3c24x0.o
 obj-$(CONFIG_PXA_SERIAL) += serial_pxa.o
 obj-$(CONFIG_MESON_SERIAL) += serial_meson.o
 obj-$(CONFIG_INTEL_MID_SERIAL) += serial_intel_mid.o

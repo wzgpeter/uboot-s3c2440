@@ -35,6 +35,9 @@
 #include <linux/errno.h>
 
 /* configurable */
+#if !defined(CONFIG_MTD_UBI_WL_THRESHOLD)
+#define CONFIG_MTD_UBI_WL_THRESHOLD	4096
+#endif
 #define CONFIG_MTD_UBI_BEB_RESERVE	1
 
 /* debug options (Linux: drivers/mtd/ubi/Kconfig.debug) */
@@ -55,6 +58,10 @@
  * (which only enables the additional error reporting).
  */
 #define CONFIG_MTD_UBI_MODULE
+
+#if !defined(CONFIG_MTD_UBI_BEB_LIMIT)
+#define CONFIG_MTD_UBI_BEB_LIMIT	20
+#endif
 
 /* build.c */
 #define get_device(...)
