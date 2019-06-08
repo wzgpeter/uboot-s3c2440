@@ -43,6 +43,7 @@ SECTIONS
 		*(.__image_copy_start)
 		*(.vectors)
 		CPUDIR/start.o (.text*)
+		./board/samsung/smdk2440/lowlevel_init.o (.text*)
 	}
 
 	/* This needs to come before *(.text*) */
@@ -60,7 +61,7 @@ SECTIONS
 		*(.__efi_runtime_stop)
 	}
 
-	.text_rest :
+	.text_rest 0x30000000 :
 	{
 		*(.text*)
 	}

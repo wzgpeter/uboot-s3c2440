@@ -6,4 +6,4 @@
 #
 
 obj-y	:= smdk2440.o
-obj-y	+= lowlevel_init.o
+extra-y	+= lowlevel_init.o
