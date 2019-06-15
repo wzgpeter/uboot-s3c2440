@@ -17,7 +17,7 @@
  * thing: zero-sized arrays, which are both 0-byte-size and exempt from
  * aliasing warnings.
  */
-
+char __text_rest_start[0] __attribute__ ((section(".__text_rest_start")));
 char __bss_start[0] __attribute__((section(".__bss_start")));
 char __bss_end[0] __attribute__((section(".__bss_end")));
 char __image_copy_start[0] __attribute__((section(".__image_copy_start")));

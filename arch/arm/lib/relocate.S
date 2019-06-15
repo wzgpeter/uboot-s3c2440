@@ -77,7 +77,7 @@ ENDPROC(relocate_vectors)
  */
 
 ENTRY(relocate_code)
-	ldr	r1, =__image_copy_start	/* r1 <- SRC &__image_copy_start */
+	ldr	r1, =__text_rest_start	/* r1 <- SRC &__image_copy_start */
 	subs	r4, r0, r1		/* r4 <- relocation offset */
 	beq	relocate_done		/* skip relocation */
 	ldr	r2, =__image_copy_end	/* r2 <- SRC &__image_copy_end */

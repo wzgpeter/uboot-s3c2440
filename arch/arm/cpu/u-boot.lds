@@ -63,8 +63,11 @@ SECTIONS
 
 	.text_rest 0x30000000 :
 	{
+		__text_rest_start = .;
+		KEEP(*(.__text_rest_start));
 		*(.text*)
 	}
+	/* PROVIDE(__text_rest_start); */
 
 #ifdef CONFIG_ARMV7_NONSEC
 

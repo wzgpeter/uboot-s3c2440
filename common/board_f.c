@@ -218,7 +218,7 @@ static int init_func_spi(void)
 static int setup_mon_len(void)
 {
 #if defined(__ARM__) || defined(__MICROBLAZE__)
-	gd->mon_len = (ulong)&__bss_end - (ulong)_start;
+	gd->mon_len = (ulong)&__bss_end - (ulong)__text_rest_start;
 #elif defined(CONFIG_SANDBOX) || defined(CONFIG_EFI_APP)
 	gd->mon_len = (ulong)&_end - (ulong)_init;
 #elif defined(CONFIG_NIOS2) || defined(CONFIG_XTENSA)
