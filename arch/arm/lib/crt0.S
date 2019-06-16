@@ -100,12 +100,14 @@ ENTRY(_main)
 	sub	r9, r9, #GD_SIZE		/* new GD is below bd */
 
 	adr	lr, here
-	ldr	r0, [r9, #GD_RELOC_OFF]		/* r0 = gd->reloc_off */
+	//ldr	r0, [r9, #GD_RELOC_OFF]		/* r0 = gd->reloc_off */
+	mov r0, #0x0			/* force not to do the relocate operation */
 	add	lr, lr, r0
 #if defined(CONFIG_CPU_V7M)
 	orr	lr, #1				/* As required by Thumb-only */
 #endif
-	ldr	r0, [r9, #GD_RELOCADDR]		/* r0 = gd->relocaddr */
+	//ldr	r0, [r9, #GD_RELOCADDR]		/* r0 = gd->relocaddr */
+	ldr r0, =0x30000000		/* force not to do the relocate operation */
 	b	relocate_code
 here:
 /*
