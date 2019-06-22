@@ -72,7 +72,8 @@ ENTRY(_main)
 #if defined(CONFIG_SPL_BUILD) && defined(CONFIG_SPL_STACK)
 	ldr	r0, =(CONFIG_SPL_STACK)
 #else
-	ldr	r0, =(CONFIG_SYS_INIT_SP_ADDR)
+	/*ldr	r0, =(CONFIG_SYS_INIT_SP_ADDR)*/
+    ldr     r0, =g_gd
 #endif
 	bic	r0, r0, #7	/* 8-byte alignment for ABI compliance */
 	mov	sp, r0

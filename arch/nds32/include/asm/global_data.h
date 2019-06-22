@@ -22,7 +22,7 @@ struct arch_global_data {
 };
 
 #include <asm-generic/global_data.h>
-
+#define CONFIG_GLOBAL_DATA_NOT_REG10
 #ifdef CONFIG_GLOBAL_DATA_NOT_REG10
 extern volatile gd_t g_gd;
 #define DECLARE_GLOBAL_DATA_PTR		static volatile gd_t *gd = &g_gd
