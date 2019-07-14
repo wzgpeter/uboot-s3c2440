@@ -18,6 +18,7 @@
 #define S3C24X0_UART_CHANNELS	3
 #define S3C24X0_SPI_CHANNELS	2
 
+
 /* S3C2440 only supports 512 Byte HW ECC */
 #define S3C2440_ECCSIZE		512
 #define S3C2440_ECCBYTES	3
